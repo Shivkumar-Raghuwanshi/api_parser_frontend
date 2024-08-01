@@ -6,7 +6,7 @@ API Parser Frontend is a modern, responsive web application designed to interact
 
 ## Features
 
-- **API Document Management**: Upload, view, and manage API documentation.
+- **API Document Management**: Paste, view, and manage API documentation.
 - **Code Generation Visualization**: Display generated code with syntax highlighting.
 - **API Data Exploration**: Interact with processed API data in a user-friendly format.
 - **File Downloads**: Easy access to download generated code and CSV files.
@@ -15,11 +15,22 @@ API Parser Frontend is a modern, responsive web application designed to interact
 
 ## Tech Stack
 
-- **Framework**: Next.js 14.2.5
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: Shadcn UI
-- **Deployment**: Vercel
+- **Next.js:**
+  - Next.js is a React framework that simplifies server-rendered application development.
+  - It offers features like automatic code splitting, server-side rendering, and routing out of the box.
+
+- **TypeScript:**
+  - TypeScript adds static typing to JavaScript, improving code quality and tooling support.
+  - It helps catch errors early and provides better documentation for your codebase.
+
+- **Tailwind CSS:**
+  - Tailwind CSS is a utility-first CSS framework.
+  - It allows you to compose styles by combining utility classes, resulting in a highly maintainable and efficient stylesheet.
+
+- **Shadcn UI:**
+  - Shadcn UI provides custom UI components with consistent styling.
+  - You can use these components to build a cohesive user interface.
+  
 
 ## Getting Started
 

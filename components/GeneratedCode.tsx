@@ -3,18 +3,22 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Editor } from "@monaco-editor/react";
 
+// Define props interface for the component
 interface GeneratedCodeProps {
   code: string;
 }
 
 export default function GeneratedCode({ code }: GeneratedCodeProps) {
+  // Reference to the editor instance
   const editorRef = useRef<any | null>(null);
 
+  // Callback when the editor is mounted
   const onMount = (editor: any) => {
     editorRef.current = editor;
     editor.focus();
   };
 
+  // Handle code download
   const handleDownload = () => {
     const blob = new Blob([code], { type: "text/plain" });
     const url = window.URL.createObjectURL(blob);
@@ -26,8 +30,8 @@ export default function GeneratedCode({ code }: GeneratedCodeProps) {
     a.click();
     window.URL.revokeObjectURL(url);
   };
- 
-
+  
+  // Render the generated code component
   return (
     <Card>
       <CardHeader>

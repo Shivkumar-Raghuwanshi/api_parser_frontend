@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Indicates that this is a client-side component in Next.js
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -6,16 +6,19 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 
+// Define props interface for the component
 interface APIDocumentFormProps {
   onCodeGenerated: (code: string) => void;
 }
 
 export default function APIDocumentForm({ onCodeGenerated}: APIDocumentFormProps) {
+  // State for form inputs and loading status
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
+  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -50,6 +53,7 @@ export default function APIDocumentForm({ onCodeGenerated}: APIDocumentFormProps
     }
   };
 
+  // Render the form
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <h2 className="text-2xl font-bold">Interpret API Document</h2>
@@ -73,5 +77,3 @@ export default function APIDocumentForm({ onCodeGenerated}: APIDocumentFormProps
     </form>
   );
 }
-
-

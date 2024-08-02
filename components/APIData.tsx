@@ -1,9 +1,10 @@
-"use client";
+"use client"; 
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
+// Define interfaces for the data structures
 interface GeneratedCode {
   id: number;
   code: string;
@@ -18,13 +19,16 @@ interface APIData {
   generated_code?: GeneratedCode;
 }
 
+// Define props interface for the component
 interface APIDataProps {
   apiData: APIData | null;
 }
 
 export default function APIData({ apiData }: APIDataProps) {
+  // State to store the latest API data
   const [latestApiData, setLatestApiData] = useState<APIData | null>(null);
 
+  // Effect to update state when props change or fetch data if not provided
   useEffect(() => {
     if (apiData) {
       setLatestApiData(apiData);
@@ -33,6 +37,7 @@ export default function APIData({ apiData }: APIDataProps) {
     }
   }, [apiData]);
 
+  // Function to fetch the latest API data
   const fetchLatestAPIData = async () => {
     try {
       const response = await fetch("http://localhost:8000/api-data/");
@@ -45,9 +50,12 @@ export default function APIData({ apiData }: APIDataProps) {
     }
   };
 
+  // Function to handle CSV download
   const handleDownloadCSV = async () => {
     try {
-      const response = await fetch("http://localhost:8000/download-latest-csv/");
+      const response = await fetch(
+        "http://localhost:8000/download-latest-csv/"
+      );
       if (response.ok) {
         const blob = await response.blob();
         const url = window.URL.createObjectURL(blob);
@@ -64,7 +72,7 @@ export default function APIData({ apiData }: APIDataProps) {
     }
   };
 
-  
+  // Render the component
   return (
     <div className="space-y-4">
       {latestApiData === null ? (
@@ -75,10 +83,9 @@ export default function APIData({ apiData }: APIDataProps) {
             <CardTitle>API Data</CardTitle>
           </CardHeader>
           <CardContent>
-            
-            <Button className="mr-2" onClick={handleDownloadCSV}>Download CSV</Button>
-            
-            
+            <Button className="mr-2" onClick={handleDownloadCSV}>
+              Download CSV
+            </Button>
           </CardContent>
         </Card>
       )}

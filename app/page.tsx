@@ -1,4 +1,4 @@
-"use client";
+"use client"; 
 
 import { useState, useEffect } from "react";
 import APIDocumentForm from "@/components/APIDocumentForm";
@@ -9,6 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { Code, Database } from "lucide-react";
 
+// Define interface for API data
 interface APIDataType {
   id: number;
   file_path: string;
@@ -22,13 +23,16 @@ interface APIDataType {
 }
 
 export default function Home() {
+  // State for generated code and API data
   const [generatedCode, setGeneratedCode] = useState<string>("");
   const [apiData, setApiData] = useState<APIDataType | null>(null);
 
+  // Fetch latest API data on component mount
   useEffect(() => {
     fetchLatestAPIData();
   }, []);
 
+  // Function to fetch latest API data
   const fetchLatestAPIData = async () => {
     try {
       const response = await fetch("http://localhost:8000/api-data/");
@@ -41,6 +45,7 @@ export default function Home() {
     }
   };
 
+  // Render the main component
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
       <main className="container mx-auto px-4 py-4 sm:px-6 sm:py-6 max-w-7xl">
@@ -70,7 +75,7 @@ export default function Home() {
                   <GeneratedCode code={generatedCode} />
                 ) : (
                   <p className="text-gray-500 text-center py-2 text-sm">
-                    No code generated. Submit form to generate.
+                    No code generated. Submit form interpret and generate.
                   </p>
                 )}
               </CardContent>

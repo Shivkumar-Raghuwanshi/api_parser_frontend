@@ -4,7 +4,7 @@
 
 API Parser Frontend is a modern, responsive web application designed to interact with the API Parser backend. It provides a user-friendly interface for interpreting API documentation, generating code, and managing API data. Built with cutting-edge technologies, this frontend offers a seamless and efficient user experience for developers and API enthusiasts.
 ## Watch the video by clicking on the thumbnail below:
-[![API Endpoints](https://img.youtube.com/vi/NECMtxhkPiE/maxresdefault.jpg)](https://www.youtube.com/embed/NECMtxhkPiE?si=VUNNz6Z1ocGON2BQ)
+[![API Endpoints](https://img.youtube.com/vi/xlwGtnT8J9Y/maxresdefault.jpg)](https://www.youtube.com/embed/xlwGtnT8J9Y?si=H_E_vJ5GIxxxOuH5)
 
 ## Features
 
